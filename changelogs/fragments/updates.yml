@@ -1,0 +1,7 @@
+---
+major_changes:
+  - updating project to lift off.
+
+minor_changes:
+  - Documentation added to help inventory to be easier to understand
+  - Updated default AAP install to 2.6
