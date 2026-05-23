@@ -10,7 +10,7 @@ terraform.rc
 /tests/output/
 /changelogs/.plugin-cache.yaml
 output/
-logs/
+logs/*
 .collection_root/*
 
 # Ignore everything inside roles/
