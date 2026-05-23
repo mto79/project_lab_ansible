@@ -1,0 +1,6 @@
+---
+ansible_user: root
+ansible_python_interpreter: /usr/bin/python3
+
+proxmox_api_user: "root@pam"
+# proxmox_api_password: store in vault (ansible-vault) or pass via --extra-vars

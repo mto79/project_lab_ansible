@@ -1,0 +1,4 @@
+---
+minor_changes:
+  - Added proxmox_info.yml playbook to gather and display node, VM, and storage information from all Proxmox cluster nodes using the community.general collection.
+  - Added proxmox_api_user group variable to mgmt/group_vars/proxmox for API authentication.

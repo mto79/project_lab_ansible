@@ -1,0 +1,3 @@
+---
+minor_changes:
+  - Configured vault_password_file in ansible.cfg to use a Bitwarden CLI script (~/.ansible/vault_pass.sh) for automatic vault decryption without interactive password prompts.
