@@ -1,0 +1,45 @@
+---
+- name: Gather Proxmox cluster information
+  hosts: proxmox
+  gather_facts: false
+
+  tasks:
+    - name: Gather node information
+      community.general.proxmox_node_info:
+        api_host: "{{ ansible_host }}"
+        api_user: "{{ proxmox_api_user }}"
+        api_password: "{{ proxmox_api_password }}"
+        validate_certs: false
+      delegate_to: localhost
+      register: node_info
+
+    - name: Display node information
+      ansible.builtin.debug:
+        msg: "{{ node_info.proxmox_nodes }}"
+
+    - name: Gather VM information
+      community.general.proxmox_vm_info:
+        api_host: "{{ ansible_host }}"
+        api_user: "{{ proxmox_api_user }}"
+        api_password: "{{ proxmox_api_password }}"
+        validate_certs: false
+        node: "{{ inventory_hostname }}"
+      delegate_to: localhost
+      register: vm_info
+
+    - name: Display VM information
+      ansible.builtin.debug:
+        msg: "{{ vm_info.proxmox_vms }}"
+
+    - name: Gather storage information
+      community.general.proxmox_storage_info:
+        api_host: "{{ ansible_host }}"
+        api_user: "{{ proxmox_api_user }}"
+        api_password: "{{ proxmox_api_password }}"
+        validate_certs: false
+      delegate_to: localhost
+      register: storage_info
+
+    - name: Display storage information
+      ansible.builtin.debug:
+        msg: "{{ storage_info.proxmox_storages }}"

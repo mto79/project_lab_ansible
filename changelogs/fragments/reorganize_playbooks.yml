@@ -1,0 +1,4 @@
+---
+minor_changes:
+  - Reorganized playbooks into technology-based subdirectories (proxmox/, network/, security/) with a top-level site.yml as the master playbook entry point.
+  - Moved proxmox_info.yml to playbooks/proxmox/info.yml.

@@ -1,0 +1,4 @@
+---
+major_changes:
+  - Added mgmt inventory environment with proxmox group containing mto-pve01, mto-pve02, and mto-pve03 nodes for Proxmox VE cluster management.
+  - Removed placeholder stage inventory.
