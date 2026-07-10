@@ -1,3 +1,4 @@
 ---
 minor_changes:
   - Configured vault_password_file in ansible.cfg to use a Bitwarden CLI script (~/.ansible/vault_pass.sh) for automatic vault decryption without interactive password prompts.
+  - Split the Bitwarden vault integration into an interactive unlock helper (~/.ansible/bw_unlock.sh) and a non-interactive fetch script (~/.ansible/vault_pass.sh). The fetch script no longer attempts to unlock the vault itself; when the Bitwarden session is locked or expired it fails fast with an actionable message telling the user to run bw_unlock.sh, instead of hanging on a master-password prompt Ansible cannot answer.
